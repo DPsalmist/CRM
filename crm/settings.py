@@ -25,7 +25,7 @@ SECRET_KEY = 'm_1n^kl^8h+$p3hqro)i@90q4y300t!*j75fon#hp!t=#dw&2e'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['sodcrm.herokuapp.com', '127.0.0.1']
 
 # gmail smtp
 EMAIL_HOST = 'smtp.gmail.com'
@@ -52,6 +52,7 @@ INSTALLED_APPS = [
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
+    'whitenoise.middleware.WhiteNoiseMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.common.CommonMiddleware',
     'django.middleware.csrf.CsrfViewMiddleware',
@@ -91,18 +92,6 @@ DATABASES = {
     }
 }
 
-#Postgres setup
-# DATABASES = {
-#     'default': {
-#         'ENGINE': 'django.db.backends.postgresql_psycopg2',
-#         'NAME': 'crmserver',
-#         'USER':'postgres',
-#         'PASSWORD':'crmpassword',
-#         'HOST':'localhost',
-#         'PORT':'5432'
-#     }
-# }
-
 
 # Password validation
 # https://docs.djangoproject.com/en/3.1/ref/settings/#auth-password-validators
@@ -139,9 +128,8 @@ USE_TZ = True
 
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/3.1/howto/static-files/
-
+STATIC_ROOT = BASE_DIR / 'static'
 STATIC_URL = '/static/'
-
 STATICFILES_DIR = BASE_DIR / 'static/'
 
 MEDIA_URL = '/images/'
