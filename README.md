@@ -15,3 +15,7 @@
  - add, update and delete products.
  - see customer's status/profile.
  - etc
+
+PS: The app is still in progress.
+
+Live url: https://sodcrm.herokuapp.com/login/?next=/
